@@ -17,7 +17,6 @@ const Skills = () => {
   const add_skills = [
     { name: "Material-UI (MUI)", value: 10 },
     { name: "Tailwind", value: 8 },
-    { name: "Bootstrap", value: 8 },
     { name: "Jira", value: 10 },
     { name: "Trello", value: 10 },
     { name: "Figma", value: 9 },
@@ -55,54 +54,69 @@ const Skills = () => {
         </Box>
       </Box>
       <Divider />
-      <Box>
-        <Typography variant="h6" fontWeight="bold" gutterBottom>
-          Main Skills Experience
-        </Typography>
-        <Box>
-          {skills.map((skill) => (
-            <Box key={skill.name} sx={{ mb: 2 }}>
-              <Typography variant="body1" fontWeight="bold" gutterBottom>
-                {skill.name}
-              </Typography>
-              <LinearProgress
-                variant="determinate"
-                value={(skill.value / 10) * 100}
-                sx={{
-                  height: 10,
-                  borderRadius: 5,
-                }}
-              />
-            </Box>
-          ))}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: {
+            xs: "column",
+            sm: "row",
+            md: "column",
+            lg: "column",
+          },
+          justifyContent: "space-around",
+          alignItems: "stretch",
+          gap: 1,
+        }}
+      >
+        <Box sx={{ minWidth: "50%" }}>
+          <Typography variant="h6" fontWeight="bold" gutterBottom>
+            Main Skills Experience
+          </Typography>
+          <Box>
+            {skills.map((skill) => (
+              <Box key={skill.name} sx={{ mb: 2 }}>
+                <Typography variant="body1" fontWeight="bold" gutterBottom>
+                  {skill.name}
+                </Typography>
+                <LinearProgress
+                  variant="determinate"
+                  value={(skill.value / 10) * 100}
+                  sx={{
+                    height: 10,
+                    borderRadius: 5,
+                  }}
+                />
+              </Box>
+            ))}
+          </Box>
         </Box>
-      </Box>
-      <Divider />
-      <Box>
-        <Typography variant="h6" fontWeight="bold" gutterBottom>
-          Additional Skills Experience
-        </Typography>
-        <Box>
-          {add_skills.map((skill) => (
-            <Box key={skill.name} sx={{ mb: 2 }}>
-              <Typography variant="body1" fontWeight="bold" gutterBottom>
-                {skill.name}
-              </Typography>
-              <LinearProgress
-                color="success"
-                variant="determinate"
-                value={(skill.value / 10) * 100}
-                sx={{
-                  height: 10,
-                  borderRadius: 5,
-                  opacity: 0.5,
-                }}
-              />
-            </Box>
-          ))}
+        <Divider />
+        <Box sx={{ minWidth: "50%" }}>
+          <Typography variant="h6" fontWeight="bold" gutterBottom>
+            Additional Skills Experience
+          </Typography>
+          <Box>
+            {add_skills.map((skill) => (
+              <Box key={skill.name} sx={{ mb: 2 }}>
+                <Typography variant="body1" fontWeight="bold" gutterBottom>
+                  {skill.name}
+                </Typography>
+                <LinearProgress
+                  color="success"
+                  variant="determinate"
+                  value={(skill.value / 10) * 100}
+                  sx={{
+                    height: 10,
+                    borderRadius: 5,
+                    opacity: 0.5,
+                  }}
+                />
+              </Box>
+            ))}
+          </Box>
         </Box>
+        <Divider />
       </Box>
-      <Divider />
       <Box>
         <Typography variant="h6" fontWeight="bold" gutterBottom>
           Education
