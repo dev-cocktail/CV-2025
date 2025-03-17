@@ -1,4 +1,4 @@
-import { Typography, Box } from "@mui/material";
+import { Box } from "@mui/material";
 import ProfessionalExp from "./ProfessionalExp";
 import Projects from "./Projects";
 import ResumeNotice from "./ResumeNotice";
